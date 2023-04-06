@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "75895246-7f25-41b7-b63c-c211f6f0a036",
+		"name": "Sample Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"_postman_id": "a71f63b4-a660-44c9-95b1-3db2aba492af",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "https://localhost:8084/api/createWorkOrder"
+			},
+			"response": []
+		},
+		{
+			"name": "payment-status Copy",
+			"_postman_id": "f356cb0b-2586-4b8e-949e-ec2da9048011",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "{{cloud-exp-password}}",
+						"username": "{{cloud-exp-username}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8084/api/payment/status?token=63329D4C7CE5D1680666CB0F7D2FFCB960BF5432&type=HPS",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"payment",
+						"status"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "63329D4C7CE5D1680666CB0F7D2FFCB960BF5432"
+						},
+						{
+							"key": "type",
+							"value": "HPS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:8083/api/sap/createWorkOrder",
+			"_postman_id": "4980598f-1a5c-496c-a064-1ce869c8dcc4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "{{sap-password}}",
+						"username": "{{sap-username}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"serviceOrder\": \"12345\",\r\n  \"serviceOrderType\": \"SRVO\",\r\n  \"serviceOrderUUID\": \"b7353bed-a3f0-483c-86ee-16baa15d85e9\",\r\n  \"serviceObjectType\": \"\",\r\n  \"purchaseOrderByCustomer\": \"0WO7g000000a80GGAQ\",\r\n  \"language\": \"EN\",\r\n  \"customerPurchaseOrderDate\": \"2022-07-09T13:51:40\",\r\n  \"referenceServiceRequest\": \"\",\r\n  \"soldToParty\": \"0017g00001TzqZtAAJ\",\r\n  \"mileageIn\": \"500\",\r\n  \"mileageOut\": \"500\",\r\n  \"vehicleOffRoad\": false,\r\n  \"startDate\": \"2022-09-07T21:30:00.000Z\",\r\n  \"endDate\": \"2022-09-08T01:15:00.000Z\",\r\n  \"serviceDocGrossAmount\": \"6914.0\",\r\n  \"serviceDocNetAmount\": \"6764.0\",\r\n  \"serviceDocTaxAmount\": \"150.0\",\r\n  \"salesOrganizationOrgUnitID\": \"\",\r\n  \"serviceOrganization\": \"\",\r\n  \"serviceOrderItemCategory\": \"\",\r\n  \"transactionCurrency\": \"USD\",\r\n  \"serviceReferenceEquipment\": \"VIN12344\",\r\n  \"personResponsible\": \"\",\r\n  \"items\": [\r\n    {\r\n      \"workOrderLineItemId\": \"1WL7g000000JkWGGA0\",\r\n      \"serviceOrderItem\": \"00000001\",\r\n      \"parentWorkOrderLineItemId\": \"1WL7g000000JyPdGAK\",\r\n      \"product\": \"WN01\",\r\n      \"quantity\": \"2.0\",\r\n      \"qunatityUnit\": \"\",\r\n      \"status\": \"\",\r\n      \"failureCause\": \"\",\r\n      \"defectCode\": \"\",\r\n      \"serialdOut\": \"\",\r\n      \"serialIdIn\": \"\",\r\n      \"campaignRecall\": \"\",\r\n      \"billableControl\": \"\",\r\n      \"startTime\": \"2022-09-11T08:00:00Z\",\r\n      \"endTime\": \"2022-09-11T08:00:00Z\",\r\n      \"productCode\": \"\",\r\n      \"partToBeReturned\": false,\r\n      \"concern\": \"\",\r\n      \"cause\": \"\",\r\n      \"correction\": \"\",\r\n      \"labor\": \"\",\r\n      \"casualPart\": \"WN01\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:8083/api/sap/createWorkOrder"
+			},
+			"response": []
+		}
+	]
+}
