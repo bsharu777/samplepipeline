@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "50aa578a-e040-4039-8f71-b2cf352a2548",
+		"name": "CloudHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "For Access token",
+			"_postman_id": "7be8b501-e23b-40d6-b0fd-803a34b82f51",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"type": "text",
+							"key": "username",
+							"value": "sha_mule2"
+						},
+						{
+							"type": "text",
+							"key": "password",
+							"value": "Integration@123"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": "https://anypoint.mulesoft.com/accounts/login"
+			},
+			"response": []
+		},
+		{
+			"name": "To get the Org Id",
+			"_postman_id": "f3a01167-a91c-4a67-80fe-72d991a8546b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ed976366-69df-4ae9-9e38-03ed1a39746d"
+					}
+				],
+				"url": "https://anypoint.mulesoft.com/accounts/api/me"
+			},
+			"response": []
+		},
+		{
+			"name": "to get the environment Id ",
+			"_postman_id": "654fa53a-ef67-48b7-b579-12421f093108",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ed976366-69df-4ae9-9e38-03ed1a39746d"
+					}
+				],
+				"url": "https://anypoint.mulesoft.com/accounts/api/organizations/eaa4def5-a568-451a-8c7c-84ac3758794a/environments"
+			},
+			"response": []
+		},
+		{
+			"name": "To get the Application details ",
+			"_postman_id": "be7fe6e8-ae57-4c8d-885c-c4154cda81fd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ed976366-69df-4ae9-9e38-03ed1a39746d"
+					},
+					{
+						"key": "X-ANYPNT-ENV-ID",
+						"value": "01351573-7f8b-4a06-95dc-d5bd5a3043aa"
+					}
+				],
+				"url": "https://anypoint.mulesoft.com/cloudhub/api/v2/applications"
+			},
+			"response": []
+		},
+		{
+			"name": "get the deployment details",
+			"_postman_id": "8e0ca16e-292e-4189-9151-2ef8a4b17db6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ed976366-69df-4ae9-9e38-03ed1a39746d"
+					},
+					{
+						"key": "X-ANYPNT-ENV-ID",
+						"value": "01351573-7f8b-4a06-95dc-d5bd5a3043aa"
+					}
+				],
+				"url": "https://anypoint.mulesoft.com/cloudhub/api/v2/applications/task11/deployments"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"_postman_id": "8c9b7740-2f4c-4db9-8961-b263807769d3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "https://studentsandbox-a-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9wt4IL4O5wvIMfkQx4eaHdGL2vbgnFGEnS9tvvAQezZjwTXwKvyu3TufGS0TZIc6HQ7_3T1LWIi1jHhc9&client_secret=6BDCF1F1B6293AE7366CF429D1EA29F742C86E4454D263A486FF0",
+			"_postman_id": "bbaae661-0778-4e48-b021-4506c547f77d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "BrowserId=8PirOe2DEeyL7l2PvPg2oQ; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1; BrowserId=nYsPKBcdEe2_V93S8icZUg; CookieConsentPolicy=0:1; LSKey-c$CookieConsentPolicy=0:1"
+					}
+				],
+				"url": {
+					"raw": "https://studentsandbox-a-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9wt4IL4O5wvIMfkQx4eaHdGL2vbgnFGEnS9tvvAQezZjwTXwKvyu3TufGS0TZIc6HQ7_3T1LWIi1jHhc9&client_secret=6BDCF1F1B6293AE7366CF429D1EA29F742C86E4454D263A486FF0A6D4595DDCA&username=tejasree@student.sandbox&password=R.anuradha@1234l01NUnt0Ob6j4vNg8oF5fC1jT",
+					"protocol": "https",
+					"host": [
+						"studentsandbox-a-dev-ed",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9wt4IL4O5wvIMfkQx4eaHdGL2vbgnFGEnS9tvvAQezZjwTXwKvyu3TufGS0TZIc6HQ7_3T1LWIi1jHhc9"
+						},
+						{
+							"key": "client_secret",
+							"value": "6BDCF1F1B6293AE7366CF429D1EA29F742C86E4454D263A486FF0A6D4595DDCA"
+						},
+						{
+							"key": "username",
+							"value": "tejasree@student.sandbox"
+						},
+						{
+							"key": "password",
+							"value": "R.anuradha@1234l01NUnt0Ob6j4vNg8oF5fC1jT"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
